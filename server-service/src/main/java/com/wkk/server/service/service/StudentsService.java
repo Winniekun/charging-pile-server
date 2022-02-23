@@ -1,6 +1,6 @@
 package com.wkk.server.service.service;
 
-import com.wkk.server.service.domain.Students;
+import com.wkk.server.service.domain.StudentsDO;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import java.util.List;
  * @since 2022/2/23
  */
 public interface StudentsService {
-    Students getStudentById();
+    StudentsDO getStudentById();
 
-    List<Students> allStudents();
+    List<StudentsDO> getAllStudents();
 }

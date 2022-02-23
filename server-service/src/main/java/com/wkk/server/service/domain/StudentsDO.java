@@ -1,6 +1,6 @@
 package com.wkk.server.service.domain;
 
-public class Students {
+public class StudentsDO {
     private Integer id;
 
     private String no;

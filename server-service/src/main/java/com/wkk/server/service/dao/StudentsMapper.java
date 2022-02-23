@@ -1,6 +1,6 @@
 package com.wkk.server.service.dao;
 
-import com.wkk.server.service.domain.Students;
+import com.wkk.server.service.domain.StudentsDO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
@@ -10,16 +10,16 @@ import java.util.List;
 public interface StudentsMapper {
     int deleteByPrimaryKey(Integer id);
 
-    int insert(Students record);
+    int insert(StudentsDO record);
 
-    int insertSelective(Students record);
+    int insertSelective(StudentsDO record);
 
-    Students selectByPrimaryKey(Integer id);
+    StudentsDO selectByPrimaryKey(Integer id);
 
-    int updateByPrimaryKeySelective(Students record);
+    int updateByPrimaryKeySelective(StudentsDO record);
 
-    int updateByPrimaryKey(Students record);
+    int updateByPrimaryKey(StudentsDO record);
 
     @Select("select * from students")
-    List<Students> selectStudentSelective(Students students);
+    List<StudentsDO> selectStudentSelective(StudentsDO students);
 }

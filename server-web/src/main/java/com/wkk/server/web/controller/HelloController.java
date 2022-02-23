@@ -1,6 +1,6 @@
 package com.wkk.server.web.controller;
 
-import com.wkk.server.service.domain.Students;
+import com.wkk.server.service.domain.StudentsDO;
 import com.wkk.server.service.service.StudentsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,7 +20,7 @@ public class HelloController {
 
     @GetMapping("/")
     public String hello() {
-        List<Students> students = studentsService.allStudents();
+        List<StudentsDO> students = studentsService.getAllStudents();
         return students.get(0).toString();
     }
 

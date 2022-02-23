@@ -1,7 +1,7 @@
 package com.wkk.server.service.service.impl;
 
 import com.wkk.server.service.dao.StudentsMapper;
-import com.wkk.server.service.domain.Students;
+import com.wkk.server.service.domain.StudentsDO;
 import com.wkk.server.service.service.StudentsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,14 +19,14 @@ public class StudentsServiceImpl implements StudentsService {
     private StudentsMapper studentsMapper;
 
     @Override
-    public Students getStudentById() {
+    public StudentsDO getStudentById() {
 //        Students students = new Students();
 //        students.setAge(1);
         return studentsMapper.selectByPrimaryKey(20);
     }
 
     @Override
-    public List<Students> allStudents() {
-        return studentsMapper.selectStudentSelective(new Students());
+    public List<StudentsDO> getAllStudents() {
+        return studentsMapper.selectStudentSelective(new StudentsDO());
     }
 }

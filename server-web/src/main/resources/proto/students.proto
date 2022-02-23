@@ -1,0 +1,44 @@
+syntax = "proto3";
+//生成的包名
+option java_multiple_files = true;
+option java_package = "com.wkk.server.service.domain.grpc.student";
+
+
+// recommend Service API
+package student;
+
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/empty.proto";
+
+
+// RecommendAPI define API to access recommend service
+service StudentsAPI {
+  rpc GetAllStudentsInfo (google.protobuf.Empty) returns (Students) {}
+  rpc GetStudentsInfoByCondition (StudentsRequest) returns (Students) {}
+  rpc GetStudentInfoById (StudentId) returns (Student) {}
+}
+
+message StudentId {
+  uint32 studentId = 1;
+}
+
+
+
+message StudentsRequest {
+  google.protobuf.StringValue userId = 1;
+  google.protobuf.StringValue name = 3;
+  google.protobuf.UInt32Value age = 4;
+  google.protobuf.UInt32Value score = 5;
+}
+
+message Students {
+  repeated Student student = 1;
+}
+
+message Student {
+  int32 id = 1;
+  string no = 2;
+  string name = 3;
+  int32 age = 4;
+  int32 score = 5;
+}

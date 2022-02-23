@@ -12,3 +12,9 @@ spring:
 
 mybatis:
   mapper-locations: classpath*:/mapper/*.xml
+
+
+grpc:
+  server:
+    charging-pile-server-grpc-server:
+      port: 8216

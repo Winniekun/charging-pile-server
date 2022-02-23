@@ -1,0 +1,14 @@
+server:
+  port: 8195
+  servlet:
+    context-path: /v1
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/demo?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
+    username: root
+    password: kwk961202
+
+mybatis:
+  mapper-locations: classpath*:/mapper/*.xml

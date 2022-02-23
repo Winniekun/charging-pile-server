@@ -1,0 +1,870 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+
+    <classPathEntry
+            location="/Users/weikunkun/maven/mysql/mysql-connector-java/8.0.28/mysql-connector-java-8.0.28.jar" />
+    <!-- OSS main database -->
+    <context id="oss" targetRuntime="MyBatis3">
+
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
+        <plugin type="org.mybatis.generator.plugins.UnmergeableXmlMappersPlugin" />
+
+        <commentGenerator>
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+
+        <jdbcConnection
+                driverClass="com.mysql.cj.jdbc.Driver"
+                connectionURL="jdbc:mysql://localhost:3306/demo"
+                userId="root"
+                password="kwk961202" >
+        </jdbcConnection>
+
+        <javaModelGenerator targetPackage="com.wkk.server.service.domain" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+
+        <javaClientGenerator targetPackage="com.wkk.server.service.dao" targetProject="src/main/java" type="XMLMAPPER">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+
+        <!--<table tableName="device_service_feedback" domainObjectName="DeviceServiceFeedback"
+        enableCountByExample="false" enableUpdateByExample="false"
+        enableDeleteByExample="false" enableSelectByExample="false"
+        selectByExampleQueryId="false">
+            <columnOverride column="staff_source"  javaType="java.lang.Integer"/>
+            <columnOverride column="end_type"  javaType="java.lang.Integer"/>
+            <columnOverride column="end_with_malfunction"  javaType="java.lang.Integer"/>
+        </table>-->
+
+        <!--<table tableName="operator_info" domainObjectName="OperatorInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="power_swap_battery_reserve_info" domainObjectName="PowerSwapBatteryReserveInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="alarm_worksheet_rule" domainObjectName="AlarmWorksheetRule"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--        <table tableName="device_worksheet_rule" domainObjectName="DeviceWorksheetRule"-->
+        <!--            enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--            enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--            selectByExampleQueryId="false">-->
+        <!--        </table>-->
+
+        <!--<table tableName="notification_rule_target" domainObjectName="NotificationRuleTarget"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="voice_alarm_warn_blacklist" domainObjectName="VoiceAlarmWarnBlacklist"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+        <!--<table tableName="cec_device_mapping" domainObjectName="CecDeviceMapping"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="cec_sgc_user" domainObjectName="CecSgcUser"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="device_basic_info" domainObjectName="DeviceBasicInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="device_location_info" domainObjectName="DeviceLocationInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="device_state_info" domainObjectName="DeviceStateInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="device_connect_info" domainObjectName="DeviceConnectInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="device_service_info" domainObjectName="DeviceServiceInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="power_swap_additional_info" domainObjectName="PowerSwapAdditionalInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="power_mobile_additional_info" domainObjectName="PowerMobileAdditionalInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="power_charger_additional_info" domainObjectName="PowerChargerAdditionalInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="charge_station_additional_info" domainObjectName="ChargeStationAdditionalInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="charge_station_picture_info" domainObjectName="ChargeStationPictureInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="battery_info" domainObjectName="BatteryInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="battery_slot_info" domainObjectName="BatterySlotInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="charging_connector_info" domainObjectName="ChargingConnectorInfo"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+        </table>-->
+
+        <!--<table tableName="charging_port_info" domainObjectName="ChargingPortInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="device_configuration_info" domainObjectName="DeviceConfigurationInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="device_remote_control_info" domainObjectName="DeviceRemoteControlInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="device_remote_config_info" domainObjectName="DeviceRemoteConfigInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="device_remote_upgrade_info" domainObjectName="DeviceRemoteUpgradeInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="device_upgrade_package_info" domainObjectName="DeviceUpgradePackageInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="power_mobile_tbox_info" domainObjectName="PowerMobileTboxInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="alarm_description" domainObjectName="AlarmDescription"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="malfunction_description" domainObjectName="MalfunctionDescription"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="malfunction_type_id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="malfunction_rule_relation" domainObjectName="MalfunctionRuleRelation"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="alarm_info" domainObjectName="AlarmInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="alarm_id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="disconnected_alarm_event_info" domainObjectName="DisconnectedAlarmEventInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="alarm_id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="malfunction_info" domainObjectName="MalfunctionInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="malfunction_id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="worksheet_info" domainObjectName="WorksheetInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="alarm_relation_info" domainObjectName="AlarmRelationInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="worksheet_member_info" domainObjectName="WorksheetMemberInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="worksheet_operation_info" domainObjectName="WorksheetOperationInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="worksheet_resource_info" domainObjectName="WorksheetResourceInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="worksheet_attachment_info" domainObjectName="WorksheetAttachmentInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="device_maintain_info" domainObjectName="DeviceMaintainInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="device_sub_info" domainObjectName="DeviceSubInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="user_configuration_info" domainObjectName="UserConfigurationInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="system_configuration_info" domainObjectName="SystemConfigurationInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="region_info" domainObjectName="RegionInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="power_mobile_violation_info" domainObjectName="PowerMobileViolationInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="power_mobile_daily_mileage_info" domainObjectName="PowerMobileDailyMileageInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="power_mobile_monthly_mileage_info" domainObjectName="PowerMobileMonthlyMileageInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="power_mobile_mileage_reminder_info" domainObjectName="PowerMobileMileageReminderInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="power_mobile_maintenance_info" domainObjectName="PowerMobileMaintenanceInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="operator_info" domainObjectName="OperatorInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="sub_operator_info" domainObjectName="SubOperatorInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="device_follower_info" domainObjectName="DeviceFollowerInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="user_info" domainObjectName="UserInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="user_id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="device_mapping_info" domainObjectName="DeviceMappingInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="storage_station_additional_info" domainObjectName="StorageStationAdditionalInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="storage_station_branch_info" domainObjectName="StorageStationBranchInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="battery_branch_info" domainObjectName="BatteryBranchInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="device_authentication_info" domainObjectName="DeviceAuthenticationInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="device_authentication_define" domainObjectName="DeviceAuthenticationDefine"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="device_signer_info" domainObjectName="DeviceSignerInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="device_virtual_key_info" domainObjectName="DeviceVirtualKeyInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="device_virtual_key_revoke_info" domainObjectName="DeviceVirtualKeyRevokeInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="device_role_config_info" domainObjectName="DeviceRoleConfigInfo"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+            <columnOverride column="role_type"  javaType="java.lang.Integer"/>
+            <columnOverride column="config_type" javaType="java.lang.Integer"/>
+            <columnOverride column="is_deleted" javaType="java.lang.Integer"/>
+            <columnOverride column="create_time" isGeneratedAlways="true"/>
+            <columnOverride column="update_time" isGeneratedAlways="true"/>
+        </table>-->
+
+        <!--<table tableName="cec_charge_order_info" domainObjectName="CecChargeOrderInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="cec_charge_status_info" domainObjectName="CecChargeStatusInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="cec_charge_detail_info" domainObjectName="CecChargeDetailInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="cec_charge_statement_info" domainObjectName="CecChargeStatementInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="cec_charge_statement_detail_info" domainObjectName="CecChargeStatementDetailInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="cec_business_exchange_info" domainObjectName="CecBusinessExchangeInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="power_mobile_gb32960_info" domainObjectName="PowerMobileGb32960Info"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="scheduled_job_info" domainObjectName="ScheduledJobInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="water_cooling_system_info" domainObjectName="WaterCoolingSystemInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableIDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="power_mobile_electric_generator_info" domainObjectName="PowerMobileElectricGeneratorInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="power_mobile_power_charger_info" domainObjectName="PowerMobilePowerChargerInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="electric_meter_info" domainObjectName="ElectricMeterInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="baybolt_gun_info" domainObjectName="BayboltGunInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="pss_sub_device_info" domainObjectName="PssSubDeviceInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="pss_nio_power_charger_info" domainObjectName="PssNioPowerChargerInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="pss_additional_info" domainObjectName="PssAdditionalInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="alarm_generate_worksheet_rule" domainObjectName="AlarmGenerateWorksheetRule"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<columnOverride column="rule_type" javaType="java.lang.Short" />-->
+        <!--</table>-->
+
+        <!--<table tableName="battery_malfunction_sheet_relation" domainObjectName="BatteryMalfunctionSheetRelation"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+
+        <!--        <table tableName="oss_dictionary" domainObjectName="OssDictionary"-->
+        <!--               enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--               enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--               selectByExampleQueryId="false">-->
+        <!--            <generatedKey column="dict_id" sqlStatement="JDBC"/>-->
+        <!--            <columnOverride column="update_time" isGeneratedAlways="true"/>-->
+        <!--            <columnOverride column="create_time" isGeneratedAlways="true"/>-->
+        <!--            <columnOverride column="deleted" isGeneratedAlways="true" javaType="java.lang.Boolean"/>-->
+        <!--        </table>-->
+
+        <!--<table tableName="parts_description" domainObjectName="PartsDescription"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="parts_id" sqlStatement="JDBC"/>-->
+        <!--<columnOverride column="update_time" isGeneratedAlways="true"/>-->
+        <!--<columnOverride column="create_time" isGeneratedAlways="true"/>-->
+        <!--<columnOverride column="deleted" isGeneratedAlways="true" javaType="java.lang.Boolean"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="acdc_module" domainObjectName="AcdcModule"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="power_allocation" domainObjectName="PowerAllocation"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--
+            <table tableName="sub_device_version" domainObjectName="SubDeviceVersion"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+               <generatedKey column="id" sqlStatement="JDBC"/>
+            </table>
+        -->
+        <!--<table tableName="voice_alarm_warn_info" domainObjectName="VoiceAlarmWarnInfo"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+        </table>
+
+
+         <table tableName="voice_warn_association" domainObjectName="VoiceWarnAssociation"
+                enableCountByExample="false" enableUpdateByExample="false"
+                enableDeleteByExample="false" enableSelectByExample="false"
+                selectByExampleQueryId="false">
+         </table>
+
+
+         <table tableName="voice_alarm_warn_relate_person" domainObjectName="VoiceAlarmWarnRelatePerson"
+                enableCountByExample="false" enableUpdateByExample="false"
+                enableDeleteByExample="false" enableSelectByExample="false"
+                selectByExampleQueryId="false">
+         </table>
+
+
+         <table tableName="voice_emergency_person" domainObjectName="VoiceEmergencyPerson"
+                enableCountByExample="false" enableUpdateByExample="false"
+                enableDeleteByExample="false" enableSelectByExample="false"
+                selectByExampleQueryId="false">
+         </table>
+        -->
+        <!--<table tableName="worksheet_task_info" domainObjectName="WorksheetTaskInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="task_id" sqlStatement="JDBC"/>-->
+        <!--<columnOverride column="task_type" javaType="java.lang.Integer"/>-->
+        <!--<columnOverride column="priority" javaType="java.lang.Integer"/>-->
+        <!--<columnOverride column="task_status" javaType="java.lang.Integer"/>-->
+        <!--<columnOverride column="is_deleted" javaType="java.lang.Boolean" isGeneratedAlways="true"/>-->
+        <!--<columnOverride column="create_time" isGeneratedAlways="true"/>-->
+        <!--<columnOverride column="update_time" isGeneratedAlways="true"/>-->
+        <!--</table>-->
+        <!--<table tableName="worksheet_task_arguments" domainObjectName="WorksheetTaskArguments"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="arguments_id" sqlStatement="JDBC"/>-->
+        <!--<columnOverride column="worksheet_priority" javaType="java.lang.Integer"/>-->
+        <!--<columnOverride column="resource_config_type" javaType="java.lang.Integer"/>-->
+        <!--<columnOverride column="create_time" isGeneratedAlways="true"/>-->
+        <!--<columnOverride column="update_time" isGeneratedAlways="true"/>-->
+        <!--</table>-->
+        <!--<table tableName="worksheet_task_record" domainObjectName="WorksheetTaskRecord"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="record_id" sqlStatement="JDBC"/>-->
+        <!--<columnOverride column="task_status" javaType="java.lang.Integer"/>-->
+        <!--<columnOverride column="create_time" isGeneratedAlways="true"/>-->
+        <!--<columnOverride column="update_time" isGeneratedAlways="true"/>-->
+        <!--</table>-->
+        <!--<table tableName="voice_alarm_job" domainObjectName="VoiceAlarmJob"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="job_id" sqlStatement="JDBC"/>-->
+        <!--<columnOverride column="alarm_state" javaType="java.lang.Integer"/>-->
+        <!--<columnOverride column="job_state" javaType="java.lang.Integer"/>-->
+        <!--<columnOverride column="create_time" isGeneratedAlways="true"/>-->
+        <!--<columnOverride column="update_time" isGeneratedAlways="true"/>-->
+        <!--</table>-->
+        <!--<table tableName="voice_alarm_call_record" domainObjectName="VoiceAlarmCallRecord"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="record_id" sqlStatement="JDBC"/>-->
+        <!--<columnOverride column="status_code" javaType="java.lang.Integer"/>-->
+        <!--<columnOverride column="create_time" isGeneratedAlways="true"/>-->
+        <!--<columnOverride column="update_time" isGeneratedAlways="true"/>-->
+        <!--</table>-->
+        <!--<table tableName="voice_alarm_notify_record" domainObjectName="VoiceAlarmNotifyRecord"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="record_id" sqlStatement="JDBC"/>-->
+        <!--<columnOverride column="create_time" isGeneratedAlways="true"/>-->
+        <!--<columnOverride column="update_time" isGeneratedAlways="true"/>-->
+        <!--</table>-->
+        <!--</context>-->
+
+
+        <!--OSS message validation database -->
+        <!--<context id="oss_message_validation" targetRuntime="MyBatis3" defaultModelType="flat">-->
+        <!--<commentGenerator>-->
+        <!--<property name="suppressAllComments" value="false" />-->
+        <!--</commentGenerator>-->
+
+        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver"-->
+        <!--connectionURL="jdbc:mysql://d-awscn-pow-db-01.clap5vvkrarj.rds.cn-north-1.amazonaws.com.cn:3306/oss_message_validation_dev"-->
+        <!--userId="root" password="a6LU3Khb">-->
+        <!--</jdbcConnection>-->
+
+        <!--<javaModelGenerator targetPackage="com.nextev.pm.oss.common.persistence.mysql.model"-->
+        <!--targetProject="oss.common.persistence.mysql/src/main/java">-->
+        <!--<property name="enableSubPackages" value="true" />-->
+        <!--<property name="trimStrings" value="true" />-->
+        <!--</javaModelGenerator>-->
+
+        <!--<sqlMapGenerator targetPackage="mapper" targetProject="oss.common.persistence.mysql/src/main/resources">-->
+        <!--<property name="enableSubPackages" value="true" />-->
+        <!--</sqlMapGenerator>-->
+
+        <!--<javaClientGenerator targetPackage="com.nextev.pm.oss.common.persistence.mysql.dao"-->
+        <!--targetProject="oss.common.persistence.mysql/src/main/java" type="XMLMAPPER">-->
+        <!--<property name="enableSubPackages" value="true" />-->
+        <!--</javaClientGenerator>-->
+
+        <!--<table tableName="abnormal_message" domainObjectName="AbnormalMessage"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="abnormal_message_detail" domainObjectName="AbnormalMessageDetail"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="device_service_finish_error_code" domainObjectName="DeviceServiceFinishErrorCode"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="battery_high_soc_info" domainObjectName="BatteryHighSocInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="device_file_info" domainObjectName="DeviceFileInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+        <!--<table tableName="cec_station_ignore_reason" domainObjectName="StationIgnoreReason"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="device_business_group_config" domainObjectName="DeviceBusinessGroupConfig"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="device_business_policy_config" domainObjectName="DeviceBusinessPolicyConfig"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="charge_station_offline_record" domainObjectName="ChargeStationOfflineRecord"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!--<table tableName="worksheet_task_resource" domainObjectName="WorksheetTaskResource"
+            enableCountByExample="false" enableUpdateByExample="false"
+            enableDeleteByExample="false" enableSelectByExample="false"
+            selectByExampleQueryId="false">
+        </table>-->
+
+        <!--<table tableName="vin_vehicle_model" domainObjectName="VinVehicleModel"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+        </table>-->
+
+        <!--<table tableName="charging_feature" domainObjectName="ChargingFeature"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+        </table>-->
+
+        <!--<table tableName="charging_feature_model_relation" domainObjectName="ChargingFeatureModelRelation"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+        </table>-->
+
+        <!--<table tableName="service_prediction_vehicle_model" domainObjectName="ServicePredictionVehicleModel"
+                enableCountByExample="false" enableUpdateByExample="false"
+                enableDeleteByExample="false" enableSelectByExample="false"
+                selectByExampleQueryId="false">
+         </table>-->
+        <!--<table tableName="charge_station_operate_record" domainObjectName="ChargeStationOperateRecord"
+                enableCountByExample="false" enableUpdateByExample="false"
+                enableDeleteByExample="false" enableSelectByExample="false"
+                selectByExampleQueryId="false">
+         </table>-->
+        <!--<table tableName="resource_ordinal_info" domainObjectName="ResourceOrdinalInfo"-->
+        <!--enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+
+        <!-- <table tableName="device_setting_info" domainObjectName="DeviceSettingInfo"
+                enableCountByExample="false" enableUpdateByExample="false"
+                enableDeleteByExample="false" enableSelectByExample="false"
+                selectByExampleQueryId="false">
+        </table>-->
+
+        <!-- <table tableName="abnormal_label_config" domainObjectName="AbnormalLabelConfig"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+        </table>-->
+
+        <!-- <table tableName="qr_code_regex_info" domainObjectName="QrCodeRegexInfo"
+                enableCountByExample="false" enableUpdateByExample="false"
+                enableDeleteByExample="false" enableSelectByExample="false"
+                selectByExampleQueryId="false">
+             <generatedKey column="id" sqlStatement="JDBC"/>
+         </table>-->
+
+        <!--<table tableName="operator_abnormal_code_relation_info" domainObjectName="OperatorAbnormalCodeRelationInfo"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+        </table>-->
+
+        <!--<table tableName="charge_abnormal_code_info" domainObjectName="ChargeAbnormalCodeInfo"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+               <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>-->
+
+        <!--<table tableName="abnormal_code_knowledge_relation_info" domainObjectName="AbnormalCodeKnowledgeRelationInfo"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+        </table>-->
+
+        <table tableName="students" domainObjectName="Students"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+        </table>
+
+    </context>
+
+</generatorConfiguration>
